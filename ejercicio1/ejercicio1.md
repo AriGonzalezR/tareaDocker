@@ -74,5 +74,132 @@ docker rm web
 
 IMPORTANTE: Lo borro al final del ejercicio 1.2, porque así muestro en una captura los dos contenedores creados para estos dos ejercicios
 
+### 1.2- Servidor Base de Datos
 
+Descargo la imagen de docker de MariaDB desde el repositorio en línea.
+
+```
+docker pull mariadb
+```
+
+captura de la ejecución
+
+![1.2.1](C:\Users\lasui\Documents\tareaDocker\CAPTURAS\1.2\1.2.1.png)
+
+Enumero las imagenes de docker instaladas en el sistema:
+
+```
+docker images
+```
+
+![1.2.2](C:\Users\lasui\Documents\tareaDocker\CAPTURAS\1.2\1.2.2.png)
+
+Inicio un nuevo contenedor de Docker de MariaDB con esta imagen de Docker:
+
+```
+docker run --detach --name bbdd --env MARIADB_USER=invitado --env MARIADB_PASSWORD=invitado --env MARIADB_ROOT_PASSWORD=root --env MARIADB_DATABASE=prueba mariadb:latest
+
+```
+
+Captura de la ejecución para la creación del contenedor:
+
+![1.2.3](C:\Users\lasui\Documents\tareaDocker\CAPTURAS\1.2\1.2.3.png)
+
+Comprobamos que se ha creado el contenedor con MariaDB:
+
+![1.2.4](C:\Users\lasui\Documents\tareaDocker\CAPTURAS\1.2\1.2.4.png)
+
+Me conecto al contenedor recién creado con una sesion shell usando el comando:
+
+```
+docker exec -it bbdd bash
+```
+
+![1.2.5](C:\Users\lasui\Documents\tareaDocker\CAPTURAS\1.2\1.2.5.png)
+
+Lo primero que hago es actualizar Ubuntu.
+
+```
+apt update && upgrade -y
+```
+
+![1.2.6](C:\Users\lasui\Documents\tareaDocker\CAPTURAS\1.2\1.2.6.png)
+
+Entramos en la base de datos con el comando:
+
+```
+mysql -u invitado -p
+```
+
+nos pedirá la contraseña ( no se ve según telceas, pero la contraseña es: invitado)
+
+![1.2.7](C:\Users\lasui\Documents\tareaDocker\CAPTURAS\1.2\1.2.7.png)
+
+Visualizamos la base de datos creada con el comando show databases:
+
+```
+show databases;
+```
+
+![1.2.8](C:\Users\lasui\Documents\tareaDocker\CAPTURAS\1.2\1.2.8.png)
+
+Salimos de la base de datos con exit:
+
+![1.2.9](C:\Users\lasui\Documents\tareaDocker\CAPTURAS\1.2\1.2.9.png)
+
+Salimos del contenedor con exit:
+
+![1.2.10](C:\Users\lasui\Documents\tareaDocker\CAPTURAS\1.2\1.2.10.png)
+
+Visualizamos las imágenes que tenemos:
+
+```
+docker images
+```
+
+![1.2.11](C:\Users\lasui\Documents\tareaDocker\CAPTURAS\1.2\1.2.11.png)
+
+Intento borrar la imagen de mariadb:
+
+```
+docker rmi mariadb
+```
+
+y vemos que no se puede borrar, mientras un contenedor esté usando la imagen:
+
+![1.2.12](C:\Users\lasui\Documents\tareaDocker\CAPTURAS\1.2\1.2.12.png)
+
+Ahora borramos ambos contenedores creados para los dos anteriores ejecicios:
+
+Primero los visualizamos:
+
+```
+docker ps -a
+```
+
+![1.2.13](C:\Users\lasui\Documents\tareaDocker\CAPTURAS\1.2\1.2.13.png)
+
+y luego los detenemos ( en el caso que esté UP y los eliminamos):
+
+```
+docker stop $(docker ps -a -q)
+```
+
+![1.2.14](C:\Users\lasui\Documents\tareaDocker\CAPTURAS\1.2\1.2.14.png)
+
+```
+docker rm $(docker ps -a -q)
+```
+
+![1.2.15](C:\Users\lasui\Documents\tareaDocker\CAPTURAS\1.2\1.2.15.png)
+
+Comprobar que se han eliminado:
+
+```
+docker ps 
+
+docker ps -a
+```
+
+![1.2.16](C:\Users\lasui\Documents\tareaDocker\CAPTURAS\1.2\1.2.16.png)
 

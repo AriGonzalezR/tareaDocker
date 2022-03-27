@@ -33,7 +33,7 @@ docker run -d --name mibase --network redbd -p 3306:3306 -v /opt/mysql:/var/lib/
 Ahora creamos otro contenedor con una imagen Adminer , que se pueda conectar al contenedor **mibase** ( con la imagen mariadb) anteriormente creado ( lo hago a través de `--link` ). Los dos contenedores tienen que estar en la misma red (`--network redbd`). El puerto no he puesto el 8080, como pone la documentacion de la imagen de Adminer de Docker Hub, sino el 8083, porque por el puerto 8080, me daba un error que no pude subsanar por mucho que lo he intentado.
 
 ```
-docker run --named adminer-ari --link mi_base:db --network redbd -p 8083:8080 -d adminer
+docker run --name adminer-ari --link mi_base:db --network redbd -p 8083:8080 -d adminer
 
 ```
 

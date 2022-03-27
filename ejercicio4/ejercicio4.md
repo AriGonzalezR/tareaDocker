@@ -88,3 +88,22 @@ docker login
 
 ```
 
+![4.9](C:\Users\lasui\Documents\tareaDocker\CAPTURAS\4\4.9.png)
+
+Etiqueto la construcción de mi imagen
+
+```
+docker tag web:latest arigonzalezr/web:ari
+```
+
+y ahora subo la imagen
+
+```
+docker push arigonzalezr/web:ari
+```
+
+![4.10](C:\Users\lasui\Documents\tareaDocker\CAPTURAS\4\4.10.png)
+
+Muestro mi imagen subida a DockerHub
+
+![4.11](C:\Users\lasui\Documents\tareaDocker\CAPTURAS\4\4.11.png)

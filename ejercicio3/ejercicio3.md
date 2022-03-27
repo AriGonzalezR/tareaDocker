@@ -143,3 +143,8 @@ docker network rm 9e74f6d750a6
 
 ![3.19](C:\Users\lasui\Documents\tareaDocker\CAPTURAS\3\3.19.png)
 
+### webgrafía
+
+Codec : https://www.youtube.com/watch?v=49VKzKBtbNY
+
+Digital Ocean: https://digitalocean.com

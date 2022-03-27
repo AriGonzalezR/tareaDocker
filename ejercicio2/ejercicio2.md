@@ -151,3 +151,27 @@ docker exec -it c2 bash
 
 ![2.16](C:\Users\lasui\Documents\tareaDocker\CAPTURAS\2\2.16.png)
 
+Ahora paramos los contenedores;
+
+```
+docker stop $(docker ps -a -q)
+```
+
+![2.17](C:\Users\lasui\Documents\tareaDocker\CAPTURAS\2\2.17.png)
+
+y los eliminamos
+
+```
+docker rm $(docker ps -a -q)
+```
+
+![2.18](C:\Users\lasui\Documents\tareaDocker\CAPTURAS\2\2.18.png)
+
+comprobamos que han sido eliminados:
+
+```
+docker ps -a
+```
+
+![2.19](C:\Users\lasui\Documents\tareaDocker\CAPTURAS\2\2.19.png)
+

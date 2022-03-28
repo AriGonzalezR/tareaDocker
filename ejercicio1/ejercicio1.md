@@ -1,3 +1,7 @@
+> Arantzazu González Rodriguez
+>
+> Tarea 3 - Despliegue
+
 ## EJERCICIO 1 - Trabajo con Imágenes
 
 ### 1.1- Servidor Web
@@ -34,7 +38,7 @@ una vez dentro del contenedor con `ls`, listamos los archivos que tenemos, en es
 
 Captura de pantalla de mi carpeta en la máquina cliente con los archivos solicitados y que está sincronizada con la carpeta del contenedor.
 
-![1.9](C:\Users\lasui\Documents\tareaDocker\CAPTURAS\1.9.png)
+![1.9](../CAPTURAS/1.9.png)
 
 Ahora seguimos dentro del contenedor y nos vamos a la carpeta etc/apache2/mods-enabled  para instalar php7 y comprobamos que **php7.load** está en mods-enabled y hacemos un `restart` a apache
 
